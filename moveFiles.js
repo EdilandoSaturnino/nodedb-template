@@ -29,6 +29,7 @@ const packageJson = require(packageJsonPath);
 
 if (packageJson.scripts && packageJson.scripts.postinstall) {
     delete packageJson.scripts.postinstall;
+    delete packageJson.files;
 }
 
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
